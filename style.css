@@ -21,15 +21,19 @@ section{
   
 }
 
+.strike {
+  text-decoration: line-through;
+}
 img{
   border-radius: 30em;
 }
 
 body{
-  background-image: url('/afbeelding/bloemen.png');
+  background-image: url('afbeelding/bloemen.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: cover;
+  
 }
 
 h1{
@@ -56,9 +60,11 @@ p{
 .kleinePlant{
   display: block;
   height: 35em;
-  width: 28em;
-  margin-left: 10em;
-   
+  width: 28em; 
+}
+
+.bijen{
+  height: 10em;
 }
 
 .flower{
@@ -145,10 +151,19 @@ p{
 }
 
 
+.seed{
+  height: 10em;
+  
+  
+}
+
+
+
 .maanteksthide{
   opacity: 0;
   transition: opacity ease-out 1s;
 }
+
 
 
 
