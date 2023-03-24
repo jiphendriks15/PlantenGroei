@@ -7,7 +7,7 @@ console.log ("waser")
 var plantengroei = document.querySelector(".kleinePlant");
 var waser = document.querySelector(".waser");
 var backgroundI = document.querySelector("body")
-var afbeeldingen = ['afbeelding/bliksum.png', 'afbeelding/super.png']
+var afbeeldingen = ['afbeelding/bliksumgoed.png', 'afbeelding/supergoed.png']
 subButton.addEventListener('click', getUserName, false); 
 var knop = document.querySelector('.knop');
 var eersteScherm = document.querySelector('#nameForm');
@@ -17,13 +17,15 @@ var sun = document.querySelector(".sun");
 var moon = document.querySelector(".moon");
 var maantekst= document.querySelector(".maantekst");
 
-var probeer = document.querySelector(".probeer")
-
 var bijen = document.querySelector(".bijen");
 var bijgroei = document.querySelector(".kleinePlant");
 
 var maan = document.querySelector(".moon");
 var maangroei = document.querySelector(".kleinePlant");
+
+var bee = document.querySelector(".bee");
+var honinggroei = document.querySelector(".kleinePlant");
+
 
 var zon = document.querySelector(".sun");
 var zongroei = document.querySelector(".kleinePlant");
@@ -33,6 +35,8 @@ var watergroei = document.querySelector(".kleinePlant");
 
 var seed = document.querySelector(".seed");
 var zaadgroei = document.querySelector(".kleinePlant");
+
+var todo = document.querySelector(".checkbox-container")
 
 
 
@@ -60,6 +64,7 @@ else de tekst je plant heet en variable van start pagina verdwijnen. */
         moon.classList.remove('hide');
         seed.classList.remove('hide');
         bijen.classList.remove('hide');
+        todo.classList.remove('hide');
     }
 }
 
@@ -85,35 +90,22 @@ function doeIetsWillekurigs(){
     plantengroei.src = afbeeldingen[index];
 }
 
-/* Wanneer er op een knop gedrukt wordt, laat er een gifje.
-function groeiPlant(parameter){
-    plantengroei.src = "afbeelding/begin.gif"
-    console.log(plantengroei)
-};
 
-sun.addEventListener("click", groeiPlant);*/
-
-
-
-
-
-    
-  /* 
-waser.addEventListener("click", groeiPlant);
-
-*/
+/*code toevoegen aan moon, hij doet 3 dingen. 1. als je op moon klikt veranderd de afbeelding. 2. maantekst
+wordt nu zichtbaar. 3. time-out ingesteld die na 5sec weer weg gaat */
 moon.addEventListener('click', function maanGroei(){
     maangroei.src = "afbeelding/start.png";
     maantekst.classList.remove('maanteksthide');
     setTimeout(function () {
         maantekst.classList.add('maanteksthide');
-      }, 2000);
+      }, 5000);
     });
 
 
-
+/* de afbeelding wordt verander en de addEventListener zorgt ervoor dat de actie wordt uitgevoerd*/
 function zonGroei(parameter){
-    zongroei.src = "afbeelding/zon.png"
+    zongroei.src = "afbeelding/zongoed.png"
+    
     console.log(plantengroei)
 };
 
@@ -122,9 +114,9 @@ sun.addEventListener("click", zonGroei);
 
 
 
-
+/* de afbeelding wordt verander en de addEventListener zorgt ervoor dat de actie wordt uitgevoerd*/
 function waterGroei(parameter){
-    watergroei.src = "afbeelding/waterr.png"
+    watergroei.src = "afbeelding/watergoed.png"
  
 };
 
@@ -132,9 +124,9 @@ waser.addEventListener("click", waterGroei);
 
 
 
-
+/* de afbeelding wordt verander en de addEventListener zorgt ervoor dat de actie wordt uitgevoerd*/
 function zaadGroei(parameter){
-    zaadgroei.src = "afbeelding/zaadje.png"
+    zaadgroei.src = "afbeelding/zaadgoed.png"
     console.log(zaadgroei)
    /* probeer.classList.add("strike")*/
 };
@@ -143,21 +135,39 @@ seed.addEventListener("click", zaadGroei);
 
 
 
-
+/* de afbeelding wordt verander en de addEventListener zorgt ervoor dat de actie wordt uitgevoerd*/
 function bijGroei(parameter){
     bijgroei.src = "afbeelding/bij.gif"
     bijgroei.src = "afbeelding/vollebloem.png"
     console.log(bijgroei)
+    document.getElementById("bijenTekst").innerHTML = "De plant is klaar!";
 };
+
 
 bijen.addEventListener("click", bijGroei);
 
 
 
 
-    
+/*selecteert alle checkboxes op de pagina door middel van een querySelectorAll en voegt vervolgens 
+een event listener toe aan elke checkbox die bij het "click" event een callbackfunctie genaamd 
+"checkboxHandler" uitvoert.De "checkboxHandler" functie controleert of de checkbox is aangevinkt en 
+voegt vervolgens de klasse "checked" toe aan de ouderdiv (".checkbox-group") van de aangevinkte checkbox.
+Als de checkbox niet is aangevinkt, wordt de klasse "checked" van de ouderdiv verwijderd.
+*/
 
-    
+let checkboxes = document.querySelectorAll("input[type='checkbox']");
+checkboxes.forEach(function (checkbox) {
+	checkbox.addEventListener("click", checkboxHandler);
+});
+function checkboxHandler() {
+	if (this.checked === true) {
+		this.closest(".checkbox-group").classList.add("checked");
+	} else {
+		this.closest(".checkbox-group").classList.remove("checked");
+	}
+}
+
 
 
 

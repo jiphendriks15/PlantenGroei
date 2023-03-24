@@ -5,27 +5,11 @@
 }
 
 @font-face {
-  font-family: Cusco;
+  font-family: cusco;
   src: url("fonts/CuSco.otf")format("opentype");
 }
-
-section{
-  /*
-  display: flex;   
-  flex-direction: row;  
-  align-items: center; 
-  z-index: 99;*/
-  position: fixed; 
-  left: 10%;
-  top: 1%;
-  
-}
-
-.strike {
-  text-decoration: line-through;
-}
-img{
-  border-radius: 30em;
+.zongoed {
+  height: 100em; /* of een andere hoogte naar keuze */
 }
 
 body{
@@ -33,17 +17,27 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: cover;
-  
+}
+
+section{
+  position: fixed; 
+  left: 10%;
+  top: 1%; 
 }
 
 h1{
-  font-family: Cusco;
+  font-family: cusco;
   margin-top: 5em;
   font-size: 5em;
 }
 
-.maantekst{
+p{
+  font-family: willow;
+  font-size: 3em;
+  margin: 0.5em;
+}
 
+.maantekst{
 font-family: Cusco;
 font-size: 3em;
 position: fixed;
@@ -51,34 +45,50 @@ top: 60%;
 right: 30%;
 }
 
-p{
-    font-family: willow;
-    font-size: 3em;
-    margin: 0.5em;
-}
 
 .kleinePlant{
   display: block;
-  height: 35em;
+  margin-left: 10em;
+  height: 30em;
   width: 28em; 
 }
 
 .bijen{
   height: 10em;
+  margin-top: 3em;
+  margin-left: 2em;
 }
 
 .flower{
   height: 20em;
   display: block;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-left: 1em;
 }
 
 .waser{
   height: 8em;
   display: flex;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-left: 2.5em;
+}
+
+.moon{
+  height:10em;
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.sun{
+  height: 10em;
+  margin-top: 3em;
+  margin-left: 1em;
+  display: flex;
+}
+
+.seed{
+  height: 10em;
+  margin-top: 3em;
 }
 
 .knop{
@@ -105,7 +115,7 @@ p{
 }
 
 #nameLabel{
-  font-family: Cusco;
+  font-family: cusco;
 }
 .knup{
   display: inline-block;
@@ -128,6 +138,7 @@ p{
   height: 48px;
   margin-top: 15em;
   margin-left: 10em;
+  margin-bottom: 3em;
 }
 
 .knup:hover{
@@ -135,26 +146,77 @@ p{
   background-color: #616467;
 }
 
-
-.moon{
-  height:10em;
-  margin-top: 5em;
-  margin-left: 2em;
+#bijenTekst{
+  background-color: lightpink;
+  font-family: cusco;
+  margin-right: 20em;
 }
 
 
-.sun{
-  height: 10em;
-  margin-top: 5em;
-  margin-left: 1em;
-  display: flex;
+
+.checkbox-container {
+	padding: 18px;
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 250px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.heading {
+	margin-inline: 0;
+	margin-block: 6px;
+}
+.checkbox-group {
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
 }
 
+.checkbox-group.checked {
+	background-color: lightpink;
+	box-shadow: rgba(13, 110, 253, 0.25) 0px 8px 24px;
+}
 
-.seed{
-  height: 10em;
-  
-  
+input[type="checkbox"] {
+	visibility: hidden;
+}
+
+input[type="checkbox"] ~ label {
+	position: relative;
+}
+
+input[type="checkbox"] ~ label:before {
+	content: "";
+	position: absolute;
+	border: 1px solid black;
+	height: 14px;
+	font-size: 12px;
+	
+	top: 0;
+	left: -26px;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+
+input[type="checkbox"]:checked ~ label {
+	color: white;
+}
+
+input[type="checkbox"]:checked ~ label:before {
+	content: "✔";
+	color: green;
 }
 
 
