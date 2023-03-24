@@ -1,3 +1,20 @@
+/*
+super hero logo:https://www.istockphoto.com/nl/vector/bright-superhero-symbol-gm584768692-100163877
+bij:https://freepngimg.com/png/149972-honey-flying-vector-bee-free-hq-image
+zaadje: zelf
+zon:https://www.pngmart.com/image/300811
+waterdruppel: zelf
+maan:https://favpng.com/png_view/clip-art-full-moon-image-illustration-png/KauNDvaP
+alle overige afbeeldingen zijn zelf gemaakt
+
+
+Extra funties:
+time out functie geleerd van Tessa Heijnen
+to do list:https://codepen.io/uxmankabir/pen/bGLKXKN
+*/
+
+
+
 /*Hiermij word getest of de javascript het doet in de browser*/
 console.log ("werkt het");
 console.log ("plantengroei");

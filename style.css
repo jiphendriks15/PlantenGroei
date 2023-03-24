@@ -8,9 +8,7 @@
   font-family: cusco;
   src: url("fonts/Cusco.otf")format("opentype");
 }
-.zongoed {
-  height: 100em; /* of een andere hoogte naar keuze */
-}
+
 
 body{
   background-image: url('afbeelding/bloemen.png');
